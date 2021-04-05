@@ -1,0 +1,21 @@
+{
+  "name": "prbot",
+  "version": "0.0.1",
+  "description": "A bot that read open PRs from Github and displays them in a Slack channel",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "send": "node index.js"
+  },
+  "author": "Nahuel Garbezza <n.garbezza@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@octokit/core": "^3.3.1",
+    "@slack/webhook": "^6.0.0",
+    "dotenv": "^8.2.0"
+  },
+  "devDependencies": {
+    "@pmoo/testy": "^5.1.0",
+    "eslint": "^7.23.0"
+  }
+}
