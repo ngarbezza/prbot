@@ -60,6 +60,8 @@ async function readPRsFrom(repo) {
 
 async function sendPRsToSlack(reposToRead) {
     const dayOfWeek = new Date().toLocaleString('en-US', { weekday: 'long' });
+    if (dayOfWeek == "Saturday" || dayOfWeek == "Sunday")
+        return;
     const introductionMessage = `${process.env.EMOJI_HELLO_MESSAGE} Happy ${dayOfWeek} team! Here are all the open PRs we have today:\n\n`;
     const notificationMessages = await Promise.all(reposToRead.map(repo => readPRsFrom(repo)));
     const slackMessage = `${introductionMessage}${notificationMessages.join('\n\n')}`;
