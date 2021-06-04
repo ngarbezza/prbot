@@ -24,6 +24,7 @@ function stateToEmoji(githubReviewState) {
     'CHANGES_REQUESTED' : process.env.EMOJI_CHANGES_REQUESTED_REVIEW,
     'COMMENTED' : process.env.EMOJI_COMMENTED_REVIEW,
     'DISMISSED' : process.env.EMOJI_DISMISSED_REVIEW,
+    'PENDING' : process.env.EMOJI_PENDING_REVIEW,
   };
   return reviewMapping[githubReviewState] || githubReviewState;
 }
