@@ -55,21 +55,18 @@ async function readPRsFrom(repo) {
         return `${process.env.EMOJI_PR_HEADER} <${pr.html_url}|${pr.title}> ${reviewsSummary}`;
     }));
 
-    return `${repoHeader}${prNotifications.join('\n\n')}`;
-}
+    async function sendPRsToSlack(reposToRead) {
+        const dayOfWeek = new Date().toLocaleString('en-US', { weekday: 'long' });
+        if (dayOfWeek == "Saturday" || dayOfWeek == "Sunday")
+            return;
+        const introductionMessage = `${process.env.EMOJI_HELLO_MESSAGE} Happy ${dayOfWeek} team! Here are all the open PRs we have today:\n\n`;
+        const notificationMessages = await Promise.all(reposToRead.map(repo => readPRsFrom(repo)));
+        const slackMessage = `${introductionMessage}${notificationMessages.join('\n\n')}`;
 
-async function sendPRsToSlack(reposToRead) {
-    const dayOfWeek = new Date().toLocaleString('en-US', { weekday: 'long' });
-    if (dayOfWeek == "Saturday" || dayOfWeek == "Sunday")
-        return;
-    const introductionMessage = `${process.env.EMOJI_HELLO_MESSAGE} Happy ${dayOfWeek} team! Here are all the open PRs we have today:\n\n`;
-    const notificationMessages = await Promise.all(reposToRead.map(repo => readPRsFrom(repo)));
-    const slackMessage = `${introductionMessage}${notificationMessages.join('\n\n')}`;
+        console.log('Sending the following message to Slack:');
+        console.log(slackMessage);
 
-    console.log('Sending the following message to Slack:');
-    console.log(slackMessage);
+        return await SLACK_WEBHOOK.send({ text: slackMessage });
+    }
 
-    return await SLACK_WEBHOOK.send({ text: slackMessage });
-}
-
-sendPRsToSlack(reposToRead);
+    sendPRsToSlack(reposToRead);
