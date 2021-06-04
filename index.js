@@ -42,6 +42,10 @@ async function readPRsFrom(repo) {
     return hasAllIncludedLabels && !hasSomeExcludedLabels;
   });
 
+  // don't show Repo tab if there are no open PRs
+  if (prsToNotify.length == 0)
+    return;
+
   const repoHeader = `${process.env.EMOJI_REPO_HEADER} ${prsToNotify.length} open PR(s) on *${repo.org}/${repo.name}*:\n`;
 
   const prNotifications = await Promise.all(prsToNotify.map(async function(pr) {
