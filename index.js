@@ -20,9 +20,10 @@ console.log(reposToRead);
 
 function stateToEmoji(githubReviewState) {
   const reviewMapping = {
-    'APPROVED' : process.env.EMOJI_APPROVED_REVIEW,
-    'CHANGES_REQUESTED' : process.env.EMOJI_CHANGES_REQUESTED_REVIEW,
-    'COMMENTED' : process.env.EMOJI_COMMENTED_REVIEW,
+    'APPROVED': process.env.EMOJI_APPROVED_REVIEW,
+    'CHANGES_REQUESTED': process.env.EMOJI_CHANGES_REQUESTED_REVIEW,
+    'COMMENTED': process.env.EMOJI_COMMENTED_REVIEW,
+    'DISMISSED': process.env.EMOJI_DISMISSED_REVIEW,
   };
   return reviewMapping[githubReviewState] || githubReviewState;
 }
