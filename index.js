@@ -23,6 +23,8 @@ function stateToEmoji(githubReviewState) {
     'APPROVED' : process.env.EMOJI_APPROVED_REVIEW,
     'CHANGES_REQUESTED' : process.env.EMOJI_CHANGES_REQUESTED_REVIEW,
     'COMMENTED' : process.env.EMOJI_COMMENTED_REVIEW,
+    'DISMISSED' : process.env.EMOJI_DISMISSED_REVIEW,
+    'PENDING' : process.env.EMOJI_PENDING_REVIEW,
   };
   return reviewMapping[githubReviewState] || githubReviewState;
 }
@@ -40,6 +42,10 @@ async function readPRsFrom(repo) {
     const hasSomeExcludedLabels = repo.excludeLabels.some(label => prLabelNames.includes(label));
     return hasAllIncludedLabels && !hasSomeExcludedLabels;
   });
+
+  // don't show Repo tab if there are no open PRs
+  if (prsToNotify.length == 0)
+    return;
 
   const repoHeader = `${process.env.EMOJI_REPO_HEADER} ${prsToNotify.length} open PR(s) on *${repo.org}/${repo.name}*:\n`;
 
@@ -59,6 +65,8 @@ async function readPRsFrom(repo) {
 
 async function sendPRsToSlack(reposToRead) {
   const dayOfWeek = new Date().toLocaleString('en-US', { weekday: 'long' });
+  if (dayOfWeek == "Saturday" || dayOfWeek == "Sunday")
+    return;
   const introductionMessage = `${process.env.EMOJI_HELLO_MESSAGE} Happy ${dayOfWeek} team! Here are all the open PRs we have today:\n\n`;
   const notificationMessages = await Promise.all(reposToRead.map(repo => readPRsFrom(repo)));
   const slackMessage = `${introductionMessage}${notificationMessages.join('\n\n')}`;
