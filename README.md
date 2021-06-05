@@ -9,7 +9,7 @@
   
 ### Configuration
 
-This app follows the [12factor](12factor.net/) convention and uses [dotenv](https://www.npmjs.com/package/dotenv) to load the configuration.
+This app follows the [12factor](https://12factor.net/) convention and uses [dotenv](https://www.npmjs.com/package/dotenv) to load the configuration.
 
 1. `cp .env.sample .env` to start with a template file
 2. Set the values for `GITHUB_API_TOKEN` and `SLACK_WEBHOOK_URL`
@@ -49,3 +49,5 @@ Emojis are customized via ENV vars starting with `EMOJI_`. All of them have defa
 * `EMOJI_APPROVED_REVIEW`
 * `EMOJI_CHANGES_REQUESTED_REVIEW`
 * `EMOJI_COMMENTED_REVIEW`
+* `EMOJI_DISMISSED_REVIEW`
+* `EMOJI_PENDING_REVIEW`

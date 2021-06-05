@@ -81,4 +81,5 @@ async function sendPRsToSlack(reposToRead) {
   return await SLACK_WEBHOOK.send({ text: slackMessage });
 }
 
-sendPRsToSlack(reposToRead);
+sendPRsToSlack(reposToRead)
+  .then(() => console.log('Finished reporting PRs'));
