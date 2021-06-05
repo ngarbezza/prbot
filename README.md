@@ -55,3 +55,21 @@ Emojis are customized via ENV vars starting with `EMOJI_`. All of them have defa
 #### Other configurations
 
 * `NODE_ENV` contains the execution environment, allowed values `"development"`, `"production"`
+
+## Notes for development
+
+### CodeClimate
+
+CodeClimate is set up in this project to keep track of maintenance metrics like test coverage.
+
+### NPM scripts
+
+This project comes with a group of useful `npm` run scripts:
+
+* `send` used to trigger the bot.
+* `test` used to run the tests with [Testy](https://github.com/ngarbezza/testy/).
+* `coverage` used to run the tests and generate a coverage report.
+* `lint` used to run ESLint and report the offenses.
+* `lint-fix` similar to `lint` but including `--fix` to autocorrect the offenses.
+* `open-coverage-report` opens the coverage result of the most recent report in a browser.
+* `generate-dependencies-graph` generates a diagram of the modules' dependencies using [Madge](https://github.com/pahen/madge). This is useful to constantly measuring the complexity of this project.
