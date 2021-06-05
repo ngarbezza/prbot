@@ -12,8 +12,9 @@ const SLACK_WEBHOOK = new IncomingWebhook(SLACK_WEBHOOK_URL);
 const reposToRead = [];
 
 for (const envVar in process.env) {
-  if (envVar.startsWith('REPO_'))
-    reposToRead.push(JSON.parse(process.env[envVar]))
+  if (envVar.startsWith('REPO_')) {
+    reposToRead.push(JSON.parse(process.env[envVar])); 
+  }
 }
 
 console.log(reposToRead);
@@ -44,8 +45,9 @@ async function readPRsFrom(repo) {
   });
 
   // don't show Repo tab if there are no open PRs
-  if (prsToNotify.length == 0)
+  if (prsToNotify.length === 0) {
     return;
+  }
 
   const repoHeader = `${process.env.EMOJI_REPO_HEADER} ${prsToNotify.length} open PR(s) on *${repo.org}/${repo.name}*:\n`;
 
@@ -53,6 +55,7 @@ async function readPRsFrom(repo) {
     const { data: reviews } = await OCTOKIT.request('GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews', {
       owner: repo.org,
       repo: repo.name,
+      // eslint-disable-next-line camelcase
       pull_number: pr.number,
     });
 
@@ -65,8 +68,9 @@ async function readPRsFrom(repo) {
 
 async function sendPRsToSlack(reposToRead) {
   const dayOfWeek = new Date().toLocaleString('en-US', { weekday: 'long' });
-  if (dayOfWeek == "Saturday" || dayOfWeek == "Sunday")
-    return;
+  if (dayOfWeek === 'Saturday' || dayOfWeek === 'Sunday') {
+    return; 
+  }
   const introductionMessage = `${process.env.EMOJI_HELLO_MESSAGE} Happy ${dayOfWeek} team! Here are all the open PRs we have today:\n\n`;
   const notificationMessages = await Promise.all(reposToRead.map(repo => readPRsFrom(repo)));
   const slackMessage = `${introductionMessage}${notificationMessages.join('\n\n')}`;
