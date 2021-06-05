@@ -4,8 +4,8 @@
 
 ### Requirements
 
-* A valid Github API Token with scope `repo`
-* A valid Slack webhook URL
+* A valid GitHub API Token with scope `repo`
+* A valid Slack webhook URL (for development, you can use any webhook testing utility like [webhook.site]())
   
 ### Configuration
 
@@ -51,3 +51,7 @@ Emojis are customized via ENV vars starting with `EMOJI_`. All of them have defa
 * `EMOJI_COMMENTED_REVIEW`
 * `EMOJI_DISMISSED_REVIEW`
 * `EMOJI_PENDING_REVIEW`
+
+#### Other configurations
+
+* `NODE_ENV` contains the execution environment, allowed values `"development"`, `"production"`
