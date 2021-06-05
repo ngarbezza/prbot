@@ -4,8 +4,12 @@
   "description": "A bot that read open PRs from Github and displays them in a Slack channel",
   "main": "index.js",
   "scripts": {
-    "test": "npx testy",
+    "coverage": "nyc --reporter=lcov --reporter=text-summary npm test",
+    "open-coverage-report": "xdg-open coverage/lcov-report/index.html",
+    "generate-dependencies-graph": "madge -i dependencies.png lib/",
+    "test": "testy",
     "lint": "eslint .",
+    "lint-fix": "eslint . --fix",
     "send": "node index.js"
   },
   "author": "Nahuel Garbezza <n.garbezza@gmail.com>",
@@ -17,6 +21,8 @@
   },
   "devDependencies": {
     "@pmoo/testy": "^5.1.0",
-    "eslint": "^7.23.0"
+    "eslint": "^7.23.0",
+    "madge": "^4.0.2",
+    "nyc": "^15.1.0"
   }
 }
