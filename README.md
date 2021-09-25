@@ -1,24 +1,29 @@
 # PR Bot
 
-<a href="https://codeclimate.com/github/ngarbezza/prbot/maintainability"><img src="https://api.codeclimate.com/v1/badges/99911b7bd287acddc2d8/maintainability" /></a>
-<a href="https://codeclimate.com/github/ngarbezza/prbot/test_coverage"><img src="https://api.codeclimate.com/v1/badges/99911b7bd287acddc2d8/test_coverage" /></a>
+[![maintainability](https://img.shields.io/codeclimate/maintainability/ngarbezza/prbot?logo=code-climate)](https://codeclimate.com/github/ngarbezza/prbot)
+[![tech-debt](https://img.shields.io/codeclimate/tech-debt/ngarbezza/prbot?logo=code-climate)](https://codeclimate.com/github/ngarbezza/prbot)
+[![coverage](https://img.shields.io/codeclimate/coverage/ngarbezza/prbot?logo=code-climate)](https://codeclimate.com/github/ngarbezza/prbot)
 
 ## Setup
 
 ### Requirements
 
 * A valid GitHub API Token with scope `repo`
-* A valid Slack webhook URL (for development, you can use any webhook testing utility like [webhook.site]())
+* A valid Slack webhook URL (for development, you can use any webhook testing
+utility like [webhook.site]())
   
 ### Configuration
 
-This app follows the [12factor](https://12factor.net/) convention and uses [dotenv](https://www.npmjs.com/package/dotenv) to load the configuration.
+This app follows the [12factor](https://12factor.net/) convention and uses
+[dotenv](https://www.npmjs.com/package/dotenv) to load the configuration.
 
 1. `cp .env.sample .env` to start with a template file
 2. Set the values for `GITHUB_API_TOKEN` and `SLACK_WEBHOOK_URL`
-3. Repos are configured with env variables starting with `REPO_` name, and the content as a serialized JSON for the desired configuration for that repo.
+3. Repos are configured with env variables starting with `REPO_` name, and the
+content as a serialized JSON for the desired configuration for that repo.
 
-For instance, if we want to see Rails' PRs with label `actionpack` we need to set up a `REPO_RAILS` with the following serialized JSON content:
+For instance, if we want to see Rails' PRs with label `actionpack` we need to
+set up a `REPO_RAILS` with the following serialized JSON content:
 
 Example:
 
@@ -33,7 +38,9 @@ Example:
 }
 ```
 
-You will find this example in the `.env.sample`, so you can use it as a template to change/setup another repos. Repeat this step for every repo you want to setup.
+You will find this example in the `.env.sample`, so you can use it as a
+template to change/setup another repos. Repeat this step for every repo you
+want to setup.
 
 #### Repo configuration parameters
 
@@ -44,7 +51,9 @@ You will find this example in the `.env.sample`, so you can use it as a template
 
 #### Slack emoji config
 
-Emojis are customized via ENV vars starting with `EMOJI_`. All of them have default values specified in `.env.sample`. You can use one or many emojis for each section.
+Emojis are customized via ENV vars starting with `EMOJI_`. All of them have
+default values specified in `.env.sample`. You can use one or many emojis
+for each section.
 
 * `EMOJI_HELLO_MESSAGE`
 * `EMOJI_PR_HEADER`
@@ -57,13 +66,15 @@ Emojis are customized via ENV vars starting with `EMOJI_`. All of them have defa
 
 #### Other configurations
 
-* `NODE_ENV` contains the execution environment, allowed values `"development"`, `"production"`
+* `NODE_ENV` contains the execution environment, allowed values `"development"`,
+`"production"`
 
 ## Notes for development
 
 ### CodeClimate
 
-CodeClimate is set up in this project to keep track of maintenance metrics like test coverage.
+CodeClimate is set up in this project to keep track of maintenance metrics like test
+coverage.
 
 ### NPM scripts
 
@@ -74,5 +85,10 @@ This project comes with a group of useful `npm` run scripts:
 * `coverage` used to run the tests and generate a coverage report.
 * `lint` used to run ESLint and report the offenses.
 * `lint-fix` similar to `lint` but including `--fix` to autocorrect the offenses.
-* `open-coverage-report` opens the coverage result of the most recent report in a browser.
-* `generate-dependencies-graph` generates a diagram of the modules' dependencies using [Madge](https://github.com/pahen/madge). This is useful to constantly measuring the complexity of this project.
+* `open-coverage-report` opens the coverage result of the most recent report in
+a browser.
+* `generate-dependencies-graph` generates a diagram of the modules' dependencies
+using [Madge](https://github.com/pahen/madge). This is useful to constantly
+measuring the complexity of this project.
+* `churn-vs-complexity` gives a summary of the code hotspots (more info in this
+[blog post](https://understandlegacycode.com/blog/focus-refactoring-with-hotspots-analysis/)
