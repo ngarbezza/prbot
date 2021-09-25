@@ -76,3 +76,4 @@ This project comes with a group of useful `npm` run scripts:
 * `lint-fix` similar to `lint` but including `--fix` to autocorrect the offenses.
 * `open-coverage-report` opens the coverage result of the most recent report in a browser.
 * `generate-dependencies-graph` generates a diagram of the modules' dependencies using [Madge](https://github.com/pahen/madge). This is useful to constantly measuring the complexity of this project.
+* `churn-vs-complexity` gives a summary of the code hotspots (more info in this [blog post](https://understandlegacycode.com/blog/focus-refactoring-with-hotspots-analysis/)

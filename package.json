@@ -7,6 +7,7 @@
     "coverage": "nyc --reporter=lcov --reporter=text-summary npm test",
     "open-coverage-report": "open coverage/lcov-report/index.html",
     "generate-dependencies-graph": "madge -i dependencies.png lib/",
+    "churn-vs-complexity": "npx code-complexity . --limit 20 --sort score",
     "start": "echo 'I am not a web app! use the send command to call me'",
     "test": "testy",
     "lint": "eslint .",
