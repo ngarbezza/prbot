@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "coverage": "nyc --reporter=lcov --reporter=text-summary npm test",
-    "open-coverage-report": "xdg-open coverage/lcov-report/index.html",
+    "open-coverage-report": "open coverage/lcov-report/index.html",
     "generate-dependencies-graph": "madge -i dependencies.png lib/",
     "start": "echo 'I am not a web app! use the send command to call me'",
     "test": "testy",
