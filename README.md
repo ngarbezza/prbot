@@ -1,5 +1,8 @@
 # PR Bot
 
+<a href="https://codeclimate.com/github/ngarbezza/prbot/maintainability"><img src="https://api.codeclimate.com/v1/badges/99911b7bd287acddc2d8/maintainability" /></a>
+<a href="https://codeclimate.com/github/ngarbezza/prbot/test_coverage"><img src="https://api.codeclimate.com/v1/badges/99911b7bd287acddc2d8/test_coverage" /></a>
+
 ## Setup
 
 ### Requirements
