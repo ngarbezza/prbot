@@ -26,6 +26,7 @@
     "eqeqeq": "error",
     "eol-last": "error",
     "func-call-spacing": "error",
+    "key-spacing": "warn",
     "id-length": "error",
     "indent": ["error", 2],
     "keyword-spacing": "error",
