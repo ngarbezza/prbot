@@ -16,14 +16,14 @@
   "author": "Nahuel Garbezza <n.garbezza@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@octokit/core": "^3.3.1",
+    "@octokit/core": "^3.5.1",
     "@slack/webhook": "^6.0.0",
-    "dotenv": "^8.2.0"
+    "dotenv": "^10.0.0"
   },
   "devDependencies": {
     "@pmoo/testy": "^5.1.0",
-    "eslint": "^7.23.0",
-    "madge": "^4.0.2",
+    "eslint": "^7.32.0",
+    "madge": "^5.0.1",
     "nyc": "^15.1.0"
   }
 }
