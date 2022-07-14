@@ -2,6 +2,11 @@
   "name": "prbot",
   "version": "0.0.1",
   "description": "A bot that read open PRs from Github and displays them in a Slack channel",
+  "homepage": "https://ngarbezza.github.io/prbot/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ngarbezza/prbot"
+  },
   "main": "index.js",
   "scripts": {
     "coverage": "nyc --reporter=lcov --reporter=text-summary npm test",
@@ -14,16 +19,19 @@
     "lint-fix": "eslint . --fix",
     "send": "node index.js"
   },
+  "engines": {
+    "node": ">= 14.*"
+  },
   "author": "Nahuel Garbezza <n.garbezza@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@octokit/core": "^3.5.1",
+    "@octokit/core": "^4.0.4",
     "@slack/webhook": "^6.1.0",
-    "dotenv": "^16.0.0"
+    "dotenv": "^16.0.1"
   },
   "devDependencies": {
-    "@pmoo/testy": "^6.0.0",
-    "eslint": "^8.8.0",
+    "@pmoo/testy": "^6.1.0",
+    "eslint": "^8.19.0",
     "eslint-config-ngarbezza": "^0.0.1",
     "madge": "^5.0.1",
     "nyc": "^15.1.0"
