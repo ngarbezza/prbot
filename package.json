@@ -27,11 +27,11 @@
   "dependencies": {
     "@octokit/core": "^4.1.0",
     "@slack/webhook": "^6.1.0",
-    "dotenv": "^16.0.1"
+    "dotenv": "^16.0.3"
   },
   "devDependencies": {
     "@pmoo/testy": "^6.1.0",
-    "eslint": "^8.19.0",
+    "eslint": "^8.26.0",
     "eslint-config-ngarbezza": "^0.0.1",
     "madge": "^5.0.1",
     "nyc": "^15.1.0"
