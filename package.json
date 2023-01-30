@@ -33,7 +33,7 @@
     "@pmoo/testy": "^6.1.0",
     "eslint": "^8.33.0",
     "eslint-config-ngarbezza": "^0.0.1",
-    "madge": "^5.0.1",
+    "madge": "^6.0.0",
     "nyc": "^15.1.0"
   }
 }
