@@ -25,7 +25,7 @@
   "author": "Nahuel Garbezza <n.garbezza@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@octokit/core": "^4.2.1",
+    "@octokit/core": "^4.2.4",
     "@slack/webhook": "^6.1.0",
     "dotenv": "^16.1.4"
   },
