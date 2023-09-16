@@ -25,15 +25,15 @@
   "author": "Nahuel Garbezza <n.garbezza@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@octokit/core": "^4.0.4",
+    "@octokit/core": "^5.0.0",
     "@slack/webhook": "^6.1.0",
-    "dotenv": "^16.0.1"
+    "dotenv": "^16.3.1"
   },
   "devDependencies": {
     "@pmoo/testy": "^6.1.0",
-    "eslint": "^8.19.0",
+    "eslint": "^8.49.0",
     "eslint-config-ngarbezza": "^0.0.1",
-    "madge": "^5.0.1",
+    "madge": "^6.1.0",
     "nyc": "^15.1.0"
   }
 }
