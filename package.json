@@ -20,7 +20,7 @@
     "send": "node index.js"
   },
   "engines": {
-    "node": ">= 14.*"
+    "node": ">= 20.*"
   },
   "author": "Nahuel Garbezza <n.garbezza@gmail.com>",
   "license": "MIT",
