@@ -27,7 +27,7 @@
   "dependencies": {
     "@octokit/core": "^5.1.0",
     "@slack/webhook": "^7.0.2",
-    "dotenv": "^16.3.2"
+    "dotenv": "^16.4.1"
   },
   "devDependencies": {
     "@pmoo/testy": "^6.1.0",
