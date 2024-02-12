@@ -1,5 +1,6 @@
-const PrFilter = require('../lib/pr_filter');
-const { suite, test, assert } = require('@pmoo/testy');
+import { PrFilter } from '../lib/pr_filter.js';
+
+import { assert, suite, test } from '@pmoo/testy';
 
 suite('PR filter', () => {
   const prWithNoLabels = () => ({ labels: [] });

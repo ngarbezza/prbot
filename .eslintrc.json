@@ -1,10 +1,13 @@
 {
   "parserOptions": {
-    "ecmaVersion": 9,
+    "ecmaVersion": 2022,
     "sourceType": "module",
     "ecmaFeatures": { }
   },
-  "extends": "eslint-config-ngarbezza",
+  "extends": [
+    "eslint-config-ngarbezza",
+    "plugin:import/recommended"
+  ],
   "env": {
     "browser": false,
     "es6": true,

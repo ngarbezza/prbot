@@ -1,5 +1,6 @@
-const RepoConfigurationParser = require('../lib/repo_configuration_parser');
-const { suite, test, assert } = require('@pmoo/testy');
+import { RepoConfigurationParser } from '../lib/repo_configuration_parser.js';
+
+import { assert, suite, test } from '@pmoo/testy';
 
 suite('Repo configuration parser', () => {
   test('it parses all variables starting with REPO_', () => {

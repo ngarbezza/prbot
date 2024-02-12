@@ -1,5 +1,6 @@
-const Environment = require('../lib/environment');
-const { suite, test, assert } = require('@pmoo/testy');
+import { Environment } from '../lib/environment.js';
+
+import { assert, suite, test } from '@pmoo/testy';
 
 suite('environment', () => {
   test('building it for production', () => {
