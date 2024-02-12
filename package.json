@@ -30,7 +30,7 @@
     "dotenv": "^16.4.1"
   },
   "devDependencies": {
-    "@pmoo/testy": "^6.1.0",
+    "@pmoo/testy": "^7.0.0",
     "eslint": "^8.56.0",
     "eslint-config-ngarbezza": "^0.0.1",
     "madge": "^6.1.0",
