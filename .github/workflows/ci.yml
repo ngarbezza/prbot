@@ -23,7 +23,7 @@ jobs:
       env:
         CI: true
     - name: Code Climate Coverage Action
-      uses: paambaati/codeclimate-action@v5.0.0
+      uses: paambaati/codeclimate-action@v6.0.0
       env:
         CC_TEST_REPORTER_ID: f8c2502b7c57c5fb0e5cafbacb50e9da6d1b7f2697e9ad09b22baa35661fe203
       with:
