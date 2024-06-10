@@ -36,6 +36,6 @@
     "eslint-config-ngarbezza": "^0.0.1",
     "eslint-plugin-import": "^2.29.1",
     "madge": "^6.1.0",
-    "nyc": "^15.1.0"
+    "nyc": "^17.0.0"
   }
 }
