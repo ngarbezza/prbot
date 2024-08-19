@@ -27,7 +27,7 @@
   "license": "MIT",
   "dependencies": {
     "@octokit/core": "^6.1.1",
-    "@slack/webhook": "^7.0.2",
+    "@slack/webhook": "^7.0.3",
     "dotenv": "^16.4.5"
   },
   "devDependencies": {
