@@ -34,7 +34,7 @@
     "@pmoo/testy": "^7.1.0",
     "eslint": "^8.57.0",
     "eslint-config-ngarbezza": "^0.0.1",
-    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-import": "^2.30.0",
     "madge": "^8.0.0",
     "nyc": "^17.0.0"
   }
