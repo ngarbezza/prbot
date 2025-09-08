@@ -1,0 +1,11 @@
+[project]
+name = "prbot"
+
+[tools.eslint]
+enabled = true
+
+[tools.markdownlint]
+enabled = true
+
+[coverage]
+enabled = true
