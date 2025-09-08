@@ -1,5 +1,4 @@
-require('dotenv').config();
+import 'dotenv/config';
+import { run } from './lib/message_sender.js';
 
-const MessageSender = require('./lib/message_sender');
-
-MessageSender.run();
+run();
