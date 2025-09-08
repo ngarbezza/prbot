@@ -2,6 +2,11 @@ name: Node CI
 
 on: push
 
+permissions:
+  actions: read
+  contents: read
+  id-token: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -23,7 +28,8 @@ jobs:
         npm run coverage
       env:
         CI: true
-    - name: Run QLTY
-      uses: qltysh/qlty-action@v1
+    - name: Upload coverage to QLTY
+      uses: qltysh/qlty-action/coverage@v2
       with:
-        coverage-file: coverage/lcov.info
+        oidc: true
+        files: coverage/lcov.info
