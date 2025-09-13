@@ -2,6 +2,11 @@ name: Node CI
 
 on: push
 
+permissions:
+  actions: read
+  contents: read
+  id-token: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -20,12 +25,11 @@ jobs:
         npm install
         npm run lint
         npm test
+        npm run coverage
       env:
         CI: true
-    - name: Code Climate Coverage Action
-      uses: paambaati/codeclimate-action@v9.0.0
-      env:
-        CC_TEST_REPORTER_ID: f8c2502b7c57c5fb0e5cafbacb50e9da6d1b7f2697e9ad09b22baa35661fe203
+    - name: Upload coverage to QLTY
+      uses: qltysh/qlty-action/coverage@v2
       with:
-        coverageCommand: npm run coverage
-        debug: true
+        oidc: true
+        files: coverage/lcov.info

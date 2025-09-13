@@ -1,8 +1,6 @@
 # PR Bot
 
-[![maintainability](https://img.shields.io/codeclimate/maintainability/ngarbezza/prbot?logo=code-climate)](https://codeclimate.com/github/ngarbezza/prbot)
-[![tech-debt](https://img.shields.io/codeclimate/tech-debt/ngarbezza/prbot?logo=code-climate)](https://codeclimate.com/github/ngarbezza/prbot)
-[![coverage](https://img.shields.io/codeclimate/coverage/ngarbezza/prbot?logo=code-climate)](https://codeclimate.com/github/ngarbezza/prbot)
+[![quality](https://img.shields.io/badge/quality-qlty-blue)](https://qlty.sh/ngarbezza/prbot)
 
 ## Setup
 
@@ -71,10 +69,10 @@ for each section.
 
 ## Notes for development
 
-### CodeClimate
+### QLTY
 
-CodeClimate is set up in this project to keep track of maintenance metrics like test
-coverage.
+QLTY is set up in this project to keep track of maintenance metrics like test
+coverage and code quality.
 
 ### NPM scripts
 
